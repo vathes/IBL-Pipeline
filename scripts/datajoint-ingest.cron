@@ -1,0 +1,2 @@
+# run datajoint ingest (TODO: path hardcoding, flock)
+45 */4 * * * /src/ibl-pipeline/datajoint-ingest.cron.sh

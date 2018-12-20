@@ -10,3 +10,12 @@ services:
       - ./data:/data
     ports:
       - "8888:8888"
+  datajoint-ingest:
+    build: .
+    env_file: .env
+    entrypoint: ibl-shell.py
+    working_dir: /src/ibl-pipeline
+    command: ingest
+    volumes:
+      - .:/src/ibl-pipeline
+      - ./data:/data
