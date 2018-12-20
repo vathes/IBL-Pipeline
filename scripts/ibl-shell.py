@@ -33,29 +33,24 @@ def logsetup(*args):
     logging.getLogger('ibl.ingest').setLevel(logging.DEBUG)
 
 
-def shell(*args):
-    interact('ibl shell.\n\nschema modules:\n\n  - {m}\n'
+def cmd_shell(*args):
+    return interact('ibl shell.\n\nschema modules:\n\n  - {m}\n'
              .format(m='\n  - '.join(
                  '.'.join(m.__name__.split('.')[1:]) for m in __all__)),
              local=globals())
 
 
-def ingest(*args):
-    # local import so db is only created created/accessed if/when ingesting
-    from ibl_pipeline.ingest import (reference as ingest_reference,
-                                    subject as ingest_subject,
-                                    acquisition as ingest_acquisition)
-    for mod in [ingest_reference, ingest_subject, ingest_acquisition]:
-        pass
-
-
-actions = {
-    'shell': shell,
-    'ingest': ingest,
-}
+def cmd_ingest(*args):
+    scripts = os.path.dirname(__file__)
+    return os.system(os.path.join(scripts, 'ingest_alyx.sh'))
 
 
 if __name__ == '__main__':
+
+    actions = {
+        'shell': cmd_shell,
+        'ingest': cmd_ingest,
+    }
 
     if len(sys.argv) < 2 or sys.argv[1] not in actions:
         usage_exit()
