@@ -1,4 +1,6 @@
-python ingest_alyx_raw.py "$@"
-python ingest_alyx_shadow.py
-python ingest_alyx_shadow_membership.py
-python ingest_alyx_real.py
+#! /bin/sh
+cd `dirname $0`
+./ingest_alyx_raw.py "$@"
+./ingest_alyx_shadow.py
+./ingest_alyx_shadow_membership.py
+./ingest_alyx_real.py
