@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 This script inserts tuples in the alyxraw table into the shadow tables \
 via auto-populating.

@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 This script ingest behavioral data into tables in the ibl_behavior schema
 '''

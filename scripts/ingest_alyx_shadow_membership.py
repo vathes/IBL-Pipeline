@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 This script inserts membership tuples into the membership shadow tables, \
 which cannot be inserted with auto-population.

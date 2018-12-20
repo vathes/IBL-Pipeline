@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 This script copies tuples in the shadow tables into the real tables for alyx, for fresh ingestion.
 '''

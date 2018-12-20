@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 '''
 This script load the json dump and insert the tuples into the alyxraw table.
 '''
