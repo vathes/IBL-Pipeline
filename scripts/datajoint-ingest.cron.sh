@@ -27,18 +27,11 @@
 #       machine FQDNORIP login LOGINNAME password PASSWORD
 #
 
-host=http://ibl.flatironinstitute.org
-path=json/alyxfull.json.gz
 log=/tmp/datajoint-ingest.log
 
 dosetup(){ crontab ${0%%.sh}; }
 
 dorun() {
-	( cd `dirname $0`/.. \
-		&& echo "# fetching at `date`" \
-			curl -O --netrc-optional=./.netrc ${host}/${path}
-				) >> $log 2>&1
-
 	( cd `dirname $0`/.. \
 		&& echo "# running at `date`" \
 		&& docker-compose \
