@@ -42,7 +42,7 @@ def cmd_shell(*args):
 
 def cmd_ingest(*args):
     scripts = os.path.dirname(__file__)
-    return os.system(os.path.join(scripts, 'ingest_alyx.sh'))
+    return os.system(os.path.join(scripts, 'ingest_all.sh'))
 
 
 if __name__ == '__main__':
