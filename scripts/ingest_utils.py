@@ -3,6 +3,7 @@
 '''
 Utility functions for ingestion
 '''
+import traceback
 
 
 def copy_table(target_schema, src_schema, table_name, fresh=False):
@@ -10,6 +11,15 @@ def copy_table(target_schema, src_schema, table_name, fresh=False):
     src_table = getattr(src_schema, table_name)
 
     if fresh:
-        target_table.insert(src_table, skip_duplicates=True)
+        target_table.insert(src_table)
     else:
-        target_table.insert(src_table - target_table.proj(), skip_duplicates=True)
+        try:
+            target_table.insert(src_table - target_table.proj(),
+                                skip_duplicates=True)
+        except:
+            for t in (src_table - target_table.proj()).fetch(as_dict=True):
+                try:
+                    target_table.insert1(t, skip_duplicates=True)
+                except Exception:
+                    print("Error when inserting {}".format(t))
+                    traceback.print_exc()

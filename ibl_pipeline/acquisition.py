@@ -51,12 +51,12 @@ class Session(dj.Manual):
     -> subject.Subject
     session_start_time:         datetime	# start time
     ---
-    session_uuid:               varchar(64)
+    session_uuid:               uuid
     session_number=null:        int     	# number
     session_end_time=null:      datetime	# end time
     -> [nullable] reference.Project
     -> [nullable] reference.LabLocation.proj(session_lab='lab_name', session_location='location_name')
-    task_protocol=null:         int
+    task_protocol=null:         varchar(255)
     session_type=null:		    varchar(255)	# type
     session_narrative=null:     varchar(1024)
     """
@@ -85,6 +85,7 @@ class SessionProcedure(dj.Manual):
     -> Session
     -> action.ProcedureType
     """
+
 
 @schema
 class WaterAdministrationSession(dj.Manual):
