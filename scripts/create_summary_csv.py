@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 This script creates a summary of the training status of animals in each lab.
 '''

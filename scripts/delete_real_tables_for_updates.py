@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 
 import datajoint as dj
 from ibl_pipeline import action, subject

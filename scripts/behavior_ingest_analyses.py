@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import time
 from ibl_pipeline import subject, acquisition, data, behavior
 from ibl_pipeline.analyses import behavior as behavior_analyses

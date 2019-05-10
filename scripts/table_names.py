@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 '''
 Create global variables for table names
 '''

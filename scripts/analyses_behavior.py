@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from ibl_pipeline.analyses import behavior
 
 behavior.PsychResults.populate(display_progress=True, suppress_errors=True)

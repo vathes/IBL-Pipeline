@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 # Anne Urai, CSHL, 2018
 # see https://github.com/int-brain-lab/ibllib/tree/master/python/oneibl/examples
 

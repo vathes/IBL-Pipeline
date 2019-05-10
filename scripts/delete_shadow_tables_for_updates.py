@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import datajoint as dj
 from ibl_pipeline.ingest import alyxraw, data
 from ibl_pipeline.ingest import action, acquisition
